@@ -16,7 +16,7 @@ var actuallikes = 0;
 publiccomen.addEventListener("click", PublicarComentario)
 
 //VerifyActualPage
-if(URLactual == "http://192.168.1.109:3306/podcast.html"){
+if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast.html"){
     librarysection.style.display = "block";
     fetch("getallpodcasts")
     .then(function (res) {
