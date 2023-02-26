@@ -16,7 +16,7 @@ var actuallikes = 0;
 publiccomen.addEventListener("click", PublicarComentario)
 
 //VerifyActualPage
-if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast.html"){
+if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast"){
     librarysection.style.display = "block";
     fetch("getallpodcasts")
     .then(function (res) {
@@ -24,7 +24,7 @@ if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast.html"){
             res.json()
                 .then(function(respond){
                     respond.forEach(block => {
-                        podcastzone.innerHTML += '<a href="podcast.html?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo"><p class="titlesPOD text-center">'+block.nombre+'</p></div></a>';
+                        podcastzone.innerHTML += '<a href="podcast?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo"><p class="titlesPOD text-center">'+block.nombre+'</p></div></a>';
                     });
                 })
         }
@@ -101,7 +101,7 @@ if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast.html"){
                             res.json()
                             .then(function(respond){
                                 respond.forEach(block => {
-                                    morepod.innerHTML += '<a href="podcast.html?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard2 disflex"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo2"><div><p class="titlesPOD text-center">ㅤ '+block.nombre+'</p><p class="titlesPOD">ㅤ '+block.duracion+'</p></div></div></a>'
+                                    morepod.innerHTML += '<a href="podcast?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard2 disflex"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo2"><div><p class="titlesPOD text-center">ㅤ '+block.nombre+'</p><p class="titlesPOD">ㅤ '+block.duracion+'</p></div></div></a>'
                                 });
                             })
                             }
@@ -194,7 +194,7 @@ function Search() {
                             podcastzone.innerHTML = '<p class="textnormal text-center">No se ha encontrado nada :(</p>'
                         }else{
                             respond.forEach(block => {
-                                podcastzone.innerHTML += '<a href="podcast.html?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo"><p class="titlesPOD text-center">'+block.nombre+'</p></div></a>';
+                                podcastzone.innerHTML += '<a href="podcast?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo"><p class="titlesPOD text-center">'+block.nombre+'</p></div></a>';
                             });
                         }
                     })
@@ -216,7 +216,7 @@ function Search2() {
                             podcastzone.innerHTML = '<p class="textnormal text-center">No se ha encontrado nada :(</p>'
                         }else{
                             respond.forEach(block => {
-                                podcastzone.innerHTML += '<a href="podcast.html?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo"><p class="titlesPOD text-center">'+block.nombre+'</p></div></a>';
+                                podcastzone.innerHTML += '<a href="podcast?watch='+block.id+'" class="titlesPOD separation"><div class="podcastcard"><img src="images/podlogos/'+block.imagen+'" alt="" class="podlogo"><p class="titlesPOD text-center">'+block.nombre+'</p></div></a>';
                             });
                         }
                     })
