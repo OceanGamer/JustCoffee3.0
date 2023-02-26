@@ -18,7 +18,7 @@ publiccomen.addEventListener("click", PublicarComentario)
 //VerifyActualPage
 if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast"){
     librarysection.style.display = "block";
-    fetch("getallpodcasts")
+    fetch("https://justcoffeeserver.onrender.com/getallpodcasts")
     .then(function (res) {
         if (res.ok) {
             res.json()
