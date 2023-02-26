@@ -1,6 +1,6 @@
 //LoadPodcasts
 function iniciarApp() {
-    fetch("get3podcasts")
+    fetch("44.227.217.144/get3podcasts")
         .then(function (res) {
             if (res.ok) {
                 res.json()
