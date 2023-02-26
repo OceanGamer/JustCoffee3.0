@@ -2,7 +2,7 @@ let cookie = document.cookie;
 let passworditem = cookie.split(";")
 let password = passworditem[0].split("=")
 let actualid;
-fetch("http://192.168.1.109:3306/login/"+password[1])
+fetch("https://justcoffeeserver.onrender.com/login/"+password[1])
         .then(function (res) {
         if (res.ok) {
             res.json()
@@ -50,7 +50,7 @@ function ModifyPage() {
     uploadpage.style.display = "none"
     modifypage.style.display = "block"
     //uploadfinish.addEventListener("click", UploadPodcast)
-    fetch("http://192.168.1.109:3306/getallpodcasts")
+    fetch("https://justcoffeeserver.onrender.com/getallpodcasts")
     .then(function (res) {
         if (res.ok) {
             res.json()
@@ -78,7 +78,7 @@ function ModifyPodcast() {
     const imagenInput = document.getElementById("imagen2").value || ""
 
     if(nameInput != "" && embedInput != ""){
-        fetch("http://192.168.1.109:3306/modifypodcast",{
+        fetch("https://justcoffeeserver.onrender.com/modifypodcast",{
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -106,7 +106,7 @@ function UploadPodcast(){
     const youtubeInput = document.getElementById("youtube").value || ""
 
     if(nameInput != "" && embedInput != ""){
-        fetch("http://192.168.1.109:3306/uploadpodcast",{
+        fetch("https://justcoffeeserver.onrender.com/uploadpodcast",{
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -136,7 +136,7 @@ function Modify(id) {
     const comentariosplace = document.getElementById("comentariosplace") || ""
     document.getElementById("modifysection").style.display = "block"
     actualid = id
-    fetch("http://192.168.1.109:3306/getpodcast/"+id)
+    fetch("https://justcoffeeserver.onrender.com/getpodcast/"+id)
         .then(function (res) {
             if (res.ok) {
                 res.json()
@@ -152,7 +152,7 @@ function Modify(id) {
             }
         })
     comentariosplace.innerHTML = ""
-    fetch("http://192.168.1.109:3306/getcomentarios/"+id)
+    fetch("https://justcoffeeserver.onrender.com/getcomentarios/"+id)
     .then(function (res) {
         if (res.ok) {
             res.json()
@@ -167,7 +167,7 @@ function Modify(id) {
 }
 
 function Delete(id) {
-    fetch("http://192.168.1.109:3306/deletepodcast/"+id,{
+    fetch("https://justcoffeeserver.onrender.com/deletepodcast/"+id,{
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -181,7 +181,7 @@ function Delete(id) {
 
 function DeleteComentario(id,name,comentario) {
     const comentariosplace = document.getElementById("comentariosplace") || ""
-    fetch("http://192.168.1.109:3306/deletecomentario/",{
+    fetch("https://justcoffeeserver.onrender.com/deletecomentario/",{
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -193,7 +193,7 @@ function DeleteComentario(id,name,comentario) {
         })
         })
         comentariosplace.innerHTML = ""
-    fetch("http://192.168.1.109:3306/getcomentarios/"+id)
+    fetch("https://justcoffeeserver.onrender.com/getcomentarios/"+id)
     .then(function (res) {
         if (res.ok) {
             res.json()
@@ -207,7 +207,7 @@ function DeleteComentario(id,name,comentario) {
         })
 }
 function Reload() {
-    location.href = 'justadmin.html'
+    location.href = 'justadmin'
 }
 
 function Exit() {

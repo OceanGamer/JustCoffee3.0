@@ -6,14 +6,14 @@ searchbutton.addEventListener("click", Login)
 function Login() {
     password = searchinput.value
     if (password != "") {
-        fetch("http://192.168.1.109:3306/login/"+password)
+        fetch("https://justcoffeeserver.onrender.com/login/"+password)
         .then(function (res) {
         if (res.ok) {
             res.json()
                 .then(function(respond){
                     if (respond == true) {
                         document.cookie = "password="+password;
-                        location.href = 'justadmin.html';
+                        location.href = 'justadmin';
                     }else{
                         error.innerHTML = '<p class="titles2 text-center">Contraseña incorrecta!</p>'
                     }

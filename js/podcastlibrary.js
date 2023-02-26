@@ -43,7 +43,7 @@ if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast"){
     searchbutton.addEventListener("click", Search)
     urltouse = window.location.toString()
     id = urltouse.split("=")
-    fetch("https://justcoffeeserver.onrender.com/getpodcast/"+id[1])
+    fetch("getpodcast/"+id[1])
     .then(function (res) {
         if (res.ok) {
             res.json()
@@ -69,7 +69,7 @@ if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast"){
                         podduracion.innerHTML = 'Duracion: '+respond[0].duracion
                         poddescripcion.innerHTML = 'Descripcion:<br>'+respond[0].descripcion
                         
-                        fetch("https://justcoffeeserver.onrender.com/getcomentarios/"+id[1])
+                        fetch("getcomentarios/"+id[1])
                         .then(function (res) {
                         if (res.ok) {
                             res.json()
@@ -81,7 +81,7 @@ if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast"){
                             }
                         })
                         
-                        fetch("https://justcoffeeserver.onrender.com/getlikes/"+id[1])
+                        fetch("getlikes/"+id[1])
                         .then(function (res) {
                         if (res.ok) {
                             res.json()
@@ -95,7 +95,7 @@ if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast"){
                         setTimeout(GetLikes, 2000)
                         
 
-                        fetch("https://justcoffeeserver.onrender.com/get8podcasts")
+                        fetch("get8podcasts")
                         .then(function (res) {
                         if (res.ok) {
                             res.json()
@@ -116,7 +116,7 @@ if(URLactual == "https://oceangamer.github.io/JustCoffee3.0/podcast"){
 function AddRemoveLike() {
     podlikes = document.getElementById("podlikes")
     podlikeszone = document.getElementById("likebuttonzone")
-    fetch("https://justcoffeeserver.onrender.com/likepublication/"+ id[1] + "/"+ ip )
+    fetch("likepublication/"+ id[1] + "/"+ ip )
         .then(function (res) {
             if (res.ok) {
                 res.json()
@@ -141,7 +141,7 @@ function AddRemoveLike() {
 
 function GetLikes() {
     ip = document.getElementById("ipzone").innerHTML
-    fetch("https://justcoffeeserver.onrender.com/liked/"+ id[1] + "/"+ ip )
+    fetch("liked/"+ id[1] + "/"+ ip )
         .then(function (res) {
             if (res.ok) {
                 res.json()
@@ -168,7 +168,7 @@ function PublicarComentario() {
     podcomentarios = document.getElementById("podcomentarios")
     if (cccomentario != "" && ccname != "") {
 
-        fetch("https://justcoffeeserver.onrender.com/pubcomentario/"+id[1]+"/"+ccname+"/"+cccomentario)
+        fetch("pubcomentario/"+id[1]+"/"+ccname+"/"+cccomentario)
         .then(function (res) {
             if (res.ok) {
                 res.json()
@@ -184,7 +184,7 @@ function PublicarComentario() {
 
 function Search() {
     if(searchinput.value != ""){
-        fetch("https://justcoffeeserver.onrender.com/searchpodcasts/"+searchinput.value)
+        fetch("searchpodcasts/"+searchinput.value)
         .then(function (res) {
             if (res.ok) {
                 res.json()
@@ -206,7 +206,7 @@ function Search() {
 
 function Search2() {
     if(searchinput2.value != ""){
-        fetch("https://justcoffeeserver.onrender.com/searchpodcasts/"+searchinput2.value)
+        fetch("searchpodcasts/"+searchinput2.value)
         .then(function (res) {
             if (res.ok) {
                 res.json()
