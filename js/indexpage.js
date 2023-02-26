@@ -1,6 +1,6 @@
 //LoadPodcasts
 function iniciarApp() {
-    fetch("44.227.217.144/get3podcasts")
+    fetch("https://justcoffeeserver.onrender.com/get3podcasts")
         .then(function (res) {
             if (res.ok) {
                 res.json()
