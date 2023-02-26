@@ -3,6 +3,7 @@ const express = require("express")
 const cors = require("cors")
 
 const app = express()
+app.use(express.static("public"))
 app.use(cors())
 app.use(express.json())
 
@@ -10,10 +11,10 @@ const {insert} = require("./operations.js");
 
 var mysql = require('mysql');
 var connection= mysql.createConnection({
-    host : "sql.freedb.tech",
-    database : "freedb_justcoffee",
-    user : "freedb_justcoffee",
-    password : "mBE@63*5xy!Uj75",
+    host : "sql9.freesqldatabase.com",
+    database : "sql9601218",
+    user : "sql9601218",
+    password : "AUM2sSVdD3",
 });
 connection.connect((err) => {
     if(err) throw err;
